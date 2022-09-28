@@ -11,7 +11,7 @@ Our raw data come from LeadsDeposit. The data was collected April, 2021. We main
 * **CNTY_NAME**: The name of the county where the restaurant is located (processed)
 * **UA_NAME**: The name of the urban area where the restaurant is located (processed)
 * **Lon**: The longitude of the restaurant, projected to WGS84, crs=4326 (processed)
-* **Lon**: The latitude of the restaurant, projected to WGS84, crs=4326 (processed)
+* **Lat**: The latitude of the restaurant, projected to WGS84, crs=4326 (processed)
 * **Frequency**: The frequency of the restaurant (processed)
 * **isChain**: A binary indicator that is 1 if the restaurant frequency > 5 else 0 (processed)
 
