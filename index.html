@@ -90,7 +90,7 @@
     <div id="map"></div>
     <p style="font-style: italic; position: absolute; left: 200px; bottom: 0px; font-size: 12px">Map by Xiaofan Liang, GeorgiaTech; Source: Liang, X., & Andris, C. (2022). Measuring McCities: Landscapes of chain and independent restaurants in the United States. Environment and Planning B: Urban Analytics and City Science, 49(2), 585-602.</p> 
     <div id="console">
-      <h1>America’s Chain + Independent Restaurants</h1>
+      <h1>America’s Chain and Independent Restaurants</h1>
       <p>
         This map shows about 705,000 U.S. restaurants. Each restaurant is given a “frequency” value showing how many locations it has. The maximum frequency restaurant, Subway, has 24,333 locations. There are about 310,000 restaurants with only one location.
         <a
@@ -98,7 +98,7 @@
           >Learn more about this project and the data here.</a
         > 
       </p>
-      <p>
+      <p style="font-size: 10px">
         Note: The actual location of these restaurants may be slightly different than represented and some restaurants are removed for quicker rendering.
       </p>
       <div id="legend", class="session">
@@ -107,20 +107,20 @@
         <div><span style="background-color: #B15829"></span>51-24333 outlets</div>
       </div>
       <div class="session2">
-        <h2>Filter by frequency (<=) <label id="active-freq">1</label></h2>
+        <h2>Filter by frequency (<=) <label id="active-freq">24333</label></h2> 
         <input
         id="slider"
         class="row"
         type="range"
-        min="1"
-        max="24333"
-        step="1"
-        value="1"
+        min="0"
+        max="4.387"
+        step="0.001"
+        value="4.387"
         style="width: 100%; margin: 0;"
         />
         </div>
       <div class="session2">
-        <h2>Filter by restaurant name</h2>
+        <h2>Filter by chain restaurant name</h2>
       </div>
       <div class="session" id="filter"> 
       </div>
@@ -130,6 +130,7 @@
       //https://docs.mapbox.com/mapbox-gl-js/example/filter-features-within-map-view/
       //https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/
       //https://docs.mapbox.com/mapbox-gl-js/example/popup/
+      //
 
 	    mapboxgl.accessToken = 'pk.eyJ1IjoieHhmZmxsIiwiYSI6ImNsODVjOGR0cTBrZGwzcG9la3RqcGxsZjYifQ.dE0YF_Mh49IlSiZP99kqMA';
 	    var map = new mapboxgl.Map({
@@ -241,11 +242,11 @@
 
         // update hour filter when the slider is dragged
         document.getElementById('slider').addEventListener('input', (event) => {
-          const freq = parseInt(event.target.value);
+          const freq = parseFloat(event.target.value);
           // update the map
-          map.setFilter('restaurant', ['<=', 'f', freq])
+          map.setFilter('restaurant', ['<=', 'f', Math.pow(10, freq)])
           // update text in the UI
-          document.getElementById('active-freq').innerText = freq;
+          document.getElementById('active-freq').innerText = Math.round(Math.pow(10, freq));
         });
         document
           .getElementById('filter')
