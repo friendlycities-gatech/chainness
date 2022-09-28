@@ -124,7 +124,7 @@
 	box-sizing: border-box;
 	overflow: hidden;
 	padding: 0;
-	max-height: 310px;
+	max-height: 140px;
 	overflow-y: auto;
 	margin: 0;
 }

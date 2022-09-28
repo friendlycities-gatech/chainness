@@ -28,7 +28,6 @@
 
       h1 {
         font-size: 20px;
-        line-height: 30px;
       }
 
       h2 {
@@ -48,7 +47,7 @@
         margin: 10px;
         width: 260px;
         background-color: white;
-        padding: 20px 10px;
+        padding: 10px;
         right: 0px;
       }
 
@@ -88,7 +87,8 @@
 
   <body>
     <div id="map"></div>
-    <p style="font-style: italic; position: absolute; left: 200px; bottom: 0px; font-size: 12px">Map by Xiaofan Liang, GeorgiaTech; Source: Liang, X., & Andris, C. (2022). Measuring McCities: Landscapes of chain and independent restaurants in the United States. Environment and Planning B: Urban Analytics and City Science, 49(2), 585-602.</p> 
+    <p style="font-style: italic; position: absolute; left: 100px; bottom: 25px; font-size: 12px">Map by Xiaofan Liang, GeorgiaTech</p> 
+    <p style="font-style: italic; position: absolute; left: 100px; bottom: 10px; font-size: 12px">Source: Liang, X., & Andris, C. (2022). Measuring McCities: Landscapes of chain and independent restaurants in the United States. Environment and Planning B: Urban Analytics and City Science, 49(2), 585-602.</p> 
     <div id="console">
       <h1>America’s Chain and Independent Restaurants</h1>
       <p>
@@ -136,8 +136,8 @@
 	    var map = new mapboxgl.Map({
 	        container: 'map', // container ID
 	        style: 'mapbox://styles/mapbox/light-v10', // style URL //dark-v10
-	        center: [-96, 40], // starting position [lng, lat]
-	        zoom: 4 // starting zoom
+	        center: [-87.7, 38.29], // starting position [lng, lat]
+	        zoom: 3.5 // starting zoom
 	    });
 
       function onlyUnique(value, index, self) {
