@@ -46,9 +46,9 @@
       #console {
         position: absolute;
         margin: 10px;
-        width: 240px;
+        width: 260px;
         background-color: white;
-        padding: 10px 20px;
+        padding: 10px 10px;
         right: 0px;
       }
 
@@ -91,17 +91,31 @@
     <div id="console">
       <h1>What is Chainness Map?</h1>
       <p>
-        We measure the chainness of a restaurant by its frequency, i.e., how many others have the same names, in the United States. Thus, a franchise restaurant would have high chainness, while an independent food stall will have low chainness. 
+        We measure the replicable foodscape by the frequency of restaurants, i.e., how many others have the same names, in the United States. Explore the slider and the dropdown to see where are the chains. The actual location of these restaurants may be slightly different than represented.
         <a
           href="https://friendlycities.gatech.edu/data-interactive/"
-          >Download data and learn more about this tool.</a
-        >
+          >Learn more about this project and the data here.</a
+        > 
       </p>
+      <p style="font-style: italic;">Map by Xiaofan Liang, GeorgiaTech</p> 
       <div id="legend", class="session">
         <h2>Chainness by color</h2>
-        <div><span style="background-color: #FFB24A"></span>frequency: 1-50</div>
-        <div><span style="background-color: #B15829"></span>frequency: 51-24333</div>
+        <div><span style="background-color: #FFB24A"></span>1-50 outlets</div>
+        <div><span style="background-color: #B15829"></span>51-24333 outlets</div>
       </div>
+      <div class="session2">
+        <h2>Filter by frequency (>=) <label id="active-freq">1</label></h2>
+        <input
+        id="slider"
+        class="row"
+        type="range"
+        min="1"
+        max="24333"
+        step="1"
+        value="1"
+        style="width: 100%; margin: 0;"
+        />
+        </div>
       <div class="session2">
         <h2>Filter by restaurant name</h2>
       </div>
@@ -127,7 +141,7 @@
 
       //Create array of options to be added
 
-      fetch('data/chainness_point_2021.geojson')
+      fetch('data/test.geojson')
       .then((response) => response.json())
       .then((json) =>{
         //Filter restaurant names that have frequency > 500
@@ -162,13 +176,14 @@
 
       map.on('load', () => {
       	let filterRest = ['!=', ['string', ['get', 'n']], 'placeholder'];
+        let filterFreq = ['>=', ['number', ['get', 'f']], 1];
 
         map.addLayer({
           id: 'restaurant',
           type: 'circle',
           source: {
             type: 'geojson',
-            data: 'data/chainness_point_2021.geojson' // replace this with the url of your own geojson
+            data: 'data/test.geojson' // replace this with the url of your own geojson
           },
           paint: {
             'circle-radius': [
@@ -197,13 +212,12 @@
             ],
             'circle-opacity': 0.5
           },
-          'filter': ['all', filterRest]
+          'filter': ['all', filterFreq, filterRest]
         });
 
         map.on('mousemove', 'restaurant', (e) => { //mousemove
           // Change the cursor style as a UI indicator.
-          map.getCanvas().style.cursor = 'pointer';
-           
+          map.getCanvas().style.cursor = 'pointer'; 
           // Populate the popup and set its coordinates based on the feature.
           const feature = e.features[0];
           popup
@@ -222,6 +236,14 @@
           popup.remove();
         });
 
+        // update hour filter when the slider is dragged
+        document.getElementById('slider').addEventListener('input', (event) => {
+          const freq = parseInt(event.target.value);
+          // update the map
+          map.setFilter('restaurant', ['>=', 'f', freq])
+          // update text in the UI
+          document.getElementById('active-freq').innerText = freq;
+        });
         document
           .getElementById('filter')
           .addEventListener('change', (event) => {
