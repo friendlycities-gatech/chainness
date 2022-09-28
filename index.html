@@ -104,7 +104,7 @@
         <div><span style="background-color: #B15829"></span>51-24333 outlets</div>
       </div>
       <div class="session2">
-        <h2>Filter by frequency (>=) <label id="active-freq">1</label></h2>
+        <h2>Filter by frequency (<=) <label id="active-freq">1</label></h2>
         <input
         id="slider"
         class="row"
@@ -176,7 +176,7 @@
 
       map.on('load', () => {
       	let filterRest = ['!=', ['string', ['get', 'n']], 'placeholder'];
-        let filterFreq = ['>=', ['number', ['get', 'f']], 1];
+        let filterFreq = ['<=', ['number', ['get', 'f']], 24333];
 
         map.addLayer({
           id: 'restaurant',
@@ -240,7 +240,7 @@
         document.getElementById('slider').addEventListener('input', (event) => {
           const freq = parseInt(event.target.value);
           // update the map
-          map.setFilter('restaurant', ['>=', 'f', freq])
+          map.setFilter('restaurant', ['<=', 'f', freq])
           // update text in the UI
           document.getElementById('active-freq').innerText = freq;
         });
