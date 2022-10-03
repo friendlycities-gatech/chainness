@@ -34,9 +34,12 @@ We use **Frequency** and **isChain** to measure the chainness of a restaurant on
 
 To see the effects of other chainness measures and the correlations of a place's chainness and socioeconomic/built environment variables (e.g., walkability, race, education, political orientation, access to highway etc.), please refer to our open access publication: [Measuring McCities: Landscapes of Chain and Independent Restaurants in the United States](https://journals.sagepub.com/doi/full/10.1177/23998083211014896)
 
-## Citation 
+## Citation
 If you use this dataset and our metrics, please cite the data source and publication: 
 
 LeadsDeposit. (2021). *WebMaster* [Data set]. https://leadsdeposit.com/
 
 Liang, X., & Andris, C. (2022). Measuring McCities: Landscapes of chain and independent restaurants in the United States. *Environment and Planning B: Urban Analytics and City Science, 49*(2), 585-602. https://doi.org/10.1177/23998083211014896
+
+## Acknowledgements
+We would like to thank Sichen Jin and Maggie Zou for their helps on visualizing the data. 
