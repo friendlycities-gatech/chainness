@@ -39,7 +39,7 @@ If you use this dataset and our metrics, please cite the data source and publica
 
 LeadsDeposit. (2021). *WebMaster* [Data set]. https://leadsdeposit.com/
 
-Liang, X., & Andris, C. (2022). Measuring McCities: Landscapes of chain and independent restaurants in the United States. *Environment and Planning B: Urban Analytics and City Science, 49*(2), 585-602. https://doi.org/10.1177/23998083211014896
+Liang, X., & Andris, C. (2021). Measuring McCities: Landscapes of chain and independent restaurants in the United States. *Environment and Planning B: Urban Analytics and City Science, 49*(2), 585-602. https://doi.org/10.1177/23998083211014896
 
 ## Acknowledgements
 We would like to thank Sichen Jin and Maggie Zou for their helps on visualizing the data. 
