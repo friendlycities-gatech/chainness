@@ -14,8 +14,12 @@ We released a different dataset than what we used in the paper because the new d
 * **RestaurantName**: Restaurant name (processed)
 * **Cusine**: Restaurant cuisine (raw)
 * **OpenHours**: Restaurant's open hours (raw)
-* **CNTY_NAME**: The name of the county where the restaurant is located. Taken from R tigris package counties() and urban_areas() functions. (processed)
-* **UA_NAME**: The name of the urban area where the restaurant is located. Taken from R tigris package counties() and urban_areas() functions. (processed)
+* **CNTY_GEOID**: County GEOID, which can be joined with other datasets (processed)
+* **CNTY_NAME**: The name of the county where the restaurant is located (processed)
+* **UA_GEOID**: Urban area GEOID, which can be joined with other datasets (processed)
+* **UA_NAME**: The name of the urban area where the restaurant is located (processed)
+* **MSA_GEOID**: Metropolitan statistical area GEOID, which can be joined with other datasets (processed)
+* **MSA_NAME**: The name of the metropolitan statistical area where the restaurant is located (processed)
 * **Lon**: The longitude of the restaurant, projected to WGS84, crs=4326 (processed)
 * **Lat**: The latitude of the restaurant, projected to WGS84, crs=4326 (processed)
 * **Frequency**: The frequency of the restaurant (processed)
@@ -23,7 +27,7 @@ We released a different dataset than what we used in the paper because the new d
 
 In total, our data has 705,622 restaurants, within which 392,078 are independent restaurants (frequency == 1). The highest chainness restaurant is Subway, with a frequency of 24333. To see the geographic distribution of data and explore its attributes, you can go to our [interactive chainness map](https://friendlycities-gatech.github.io/chainness/). 
 
-**You can download the csv data [here](https://github.com/friendlycities-gatech/chainness/tree/main/data)**. The full dataset needs to merge part 1 and part2. Note that the geojson file in the same folder is only used for interactive visualization, in which the actual location of the restaurants may be coarsened and some data points are removed for quicker rendering. Please refer to the csv for the accurate analysis. This data is curated specifically to examine the chain and independent foodscape in the United States and thus users should use with discretion. **The data is shared for non-profit and academic uses and you must cite the sources (see below)**. 
+**You can download the csv data [here](https://github.com/friendlycities-gatech/chainness/tree/main/data)**. The full dataset needs to merge part1, part2, and part3. Note that the geojson file in the same folder is only used for interactive visualization, in which the actual location of the restaurants may be coarsened and some data points are removed for quicker rendering. Please refer to the csv for the accurate analysis. This data is curated specifically to examine the chain and independent foodscape in the United States and thus users should use with discretion. **The data is shared for non-profit and academic uses and you must cite the sources (see below)**. 
 
 ## Method 
 We use **Frequency** and **isChain** to measure the chainness of a restaurant on the point level. 
