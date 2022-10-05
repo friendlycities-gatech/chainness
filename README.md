@@ -14,6 +14,7 @@ We released a different dataset than what we used in the paper because the new d
 * **RestaurantName**: Restaurant name (processed)
 * **Cusine**: Restaurant cuisine (raw)
 * **OpenHours**: Restaurant's open hours (raw)
+* **State**: State (raw)
 * **CNTY_GEOID**: County GEOID, which can be joined with other datasets (processed)
 * **CNTY_NAME**: The name of the county where the restaurant is located (processed)
 * **UA_GEOID**: Urban area GEOID, which can be joined with other datasets (processed)
