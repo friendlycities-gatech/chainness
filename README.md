@@ -26,7 +26,7 @@ We released a different dataset than what we used in the paper because the new d
 * **Frequency**: The frequency of the restaurant (processed)
 * **isChain**: A binary indicator that is 1 if the restaurant frequency > 5 else 0 (processed)
 
-In total, our data has 705,622 restaurants, within which 392,078 are independent restaurants (frequency == 1). The highest chainness restaurant is Subway, with a frequency of 24333. To see the geographic distribution of data and explore its attributes, you can go to our [interactive chainness map](https://friendlycities-gatech.github.io/chainness/). 
+In total, our data has 705,621 restaurants, within which 392,077 are independent restaurants (frequency == 1). The highest chainness restaurant is Subway, with a frequency of 24333. To see the geographic distribution of data and explore its attributes, you can go to our [interactive chainness map](https://friendlycities-gatech.github.io/chainness/). 
 
 **You can download the csv data [here](https://github.com/friendlycities-gatech/chainness/tree/main/data)**. The full dataset needs to merge part1, part2, and part3. Note that the geojson file in the same folder is only used for interactive visualization, in which the actual location of the restaurants may be coarsened and some data points are removed for quicker rendering. Please refer to the csv for the accurate analysis. This data is curated specifically to examine the chain and independent foodscape in the United States and thus users should use with discretion. **The data is shared for non-profit and academic uses and you must cite the sources (see below)**. 
 
