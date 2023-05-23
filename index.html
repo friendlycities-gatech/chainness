@@ -131,13 +131,13 @@
       //https://docs.mapbox.com/mapbox-gl-js/example/popup/
       //
 
-	    mapboxgl.accessToken = 'pk.eyJ1IjoieHhmZmxsIiwiYSI6ImNsODVjOGR0cTBrZGwzcG9la3RqcGxsZjYifQ.dE0YF_Mh49IlSiZP99kqMA';
-	    var map = new mapboxgl.Map({
-	        container: 'map', // container ID
-	        style: 'mapbox://styles/mapbox/light-v10', // style URL //dark-v10
-	        center: [-87.7, 38.29], // starting position [lng, lat]
-	        zoom: 3.5 // starting zoom
-	    });
+      mapboxgl.accessToken = 'pk.eyJ1IjoieHhmZmxsIiwiYSI6ImNsODVjOGR0cTBrZGwzcG9la3RqcGxsZjYifQ.dE0YF_Mh49IlSiZP99kqMA';
+      var map = new mapboxgl.Map({
+          container: 'map', // container ID
+          style: 'mapbox://styles/mapbox/light-v10', // style URL //dark-v10
+          center: [-87.7, 38.29], // starting position [lng, lat]
+          zoom: 3.5 // starting zoom
+      });
 
       function onlyUnique(value, index, self) {
         return self.indexOf(value) === index;}
@@ -178,7 +178,7 @@
       });
 
       map.on('load', () => {
-      	let filterRest = ['!=', ['string', ['get', 'n']], 'placeholder'];
+        let filterRest = ['!=', ['string', ['get', 'n']], 'placeholder'];
         let filterFreq = ['<=', ['number', ['get', 'f']], 24333];
 
         map.addLayer({
