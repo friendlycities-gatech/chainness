@@ -144,7 +144,7 @@
 
       //Create array of options to be added
 
-      fetch('data/chainness_point_2021.geojson')
+      fetch('d/chainness_point_2021.geojson')
       .then((response) => response.json())
       .then((json) =>{
         //Filter restaurant names that have frequency > 500
@@ -186,7 +186,7 @@
           type: 'circle',
           source: {
             type: 'geojson',
-            data: 'data/chainness_point_2021.geojson' // replace this with the url of your own geojson
+            data: 'd/chainness_point_2021.geojson' // replace this with the url of your own geojson
           },
           paint: {
             'circle-radius': [
