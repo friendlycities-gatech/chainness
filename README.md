@@ -34,7 +34,7 @@ In total, our data has 705,621 restaurants, within which 392,077 are independent
 
 **If you are interested in an academic or nonprofit collaboration using the full dataset, please contact us at clio@gatech.edu and/or xiaofan.l@gatech.edu.**
 
-**DOWNLOAD aggregated chainness data (measured by average frequency and percent chain) and total number of restaurants on the county level, UA level, and MSA level [here](https://github.com/friendlycities-gatech/chainness/data)**
+**DOWNLOAD aggregated chainness data (measured by average frequency and percent chain) and total number of restaurants on the county level, UA level, and MSA level [here](https://github.com/friendlycities-gatech/chainness/tree/main/data)**
 
 ## Method 
 We use **Frequency** and **isChain** to measure the chainness of a restaurant on the point level. 
